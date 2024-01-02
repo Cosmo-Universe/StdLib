@@ -1,0 +1,8 @@
+// Cosmo Lingua Header
+
+pragma:
+    defin class 'print' (Cosmolang)
+
+private:
+    
+public:

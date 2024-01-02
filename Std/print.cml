@@ -1,0 +1,49 @@
+
+#defin header dtd2
+@module import load args "print.clh" ${--std lib}
+
+#define class std;
+
+#define load {
+    @modules code consolas CLU import STD print() || log() {~int} // If print call and the param include int call log
+    @modules code consolas CLU import STD log() || print() {?string&!int} // If log call and the param doesn't include int call print
+
+    // std::stroc = std::storage_control
+    const class std storage_control = (class::std).stroc;
+} #define end of load
+
+@modules mod namespaces std
+
+// fwt = free way transfer
+void* std::storage_control print(std::string::__std.fwt_ (string)s): (std::storage.display()) {
+    const __l = s.length(std), std::storage *__s__, string addr &s, block<u32b2> blocks; // __ is for unitiliaze and initliaze
+    std::storage.write.~run(__l, s[~blocks], __s__, &s); // length, msg[blocks], storage, addr
+    return std::storage.log[-1];
+}
+
+void* std::storage_control log(std::string::__std.fwt_(std::variant) (string/int)c): (std::storage.display()) {
+    const __l = s.length(std), std::storage *__s__, string addr &s; // __ is for unitiliaze and initliaze
+
+    // Initliaze integer
+    interface block<u32b2> blocks {
+        for (i in range of blocks : std::input(c:char[])) {
+            blocks.push(std::stack::blocks) ? (return c[i]) : warning(f"The char ${c[i]} can resolve. String Error Code: #SEC-0001log.", Type: Warning(1));
+        }
+    }
+
+    std::storage.log.~run(__l, interface %blocks, __s__, &s); // length, msg[blocks], storage, addr
+    return std::storage.log[-1];
+}
+
+//wte = Warning Trasfer Error (All warning and error level 1-3)
+void* std::stroc warning(std::vector::_std.wte_(std::variant<Vector>(string|int|warning)errLv.level())error, Warning(): Type): (std::storage.display().error(Type: warning)) {
+    const
+}
+
+void* std::stroc info
+
+void* std::stroc error
+
+void* std::stroc errno
+
+void* std::stroc expected

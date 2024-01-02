@@ -1,0 +1,11 @@
+@mod Warning
+
+@modules load variant in macros
+
+typeof variant<Enumerator> Warnings {
+    std::variant<>
+}
+
+~Warnings Warning (u64 level) {
+
+}

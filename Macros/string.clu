@@ -1,0 +1,12 @@
+@mod string
+
+interface GLOBAL::namespaces string (input) => () {
+    const<<|>let int length = string.input.length();
+    const<<|>let int[Array<(int)>] char = 
+}
+
+class Enumerator Unit|Initt {
+    constant __parse__()
+
+    constant __call__()
+}

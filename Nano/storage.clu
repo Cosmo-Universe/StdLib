@@ -1,0 +1,56 @@
+// C++
+
+// CONVERTING IN CLU
+
+
+
+
+
+
+
+
+
+#include <iostream>
+#include <vector>
+
+class StorageControl {
+private:
+    std::vector<std::string> storageItems;
+
+public:
+    void addItem(const std::string& item) {
+        storageItems.push_back(item);
+    }
+
+    void removeItem(const std::string& item) {
+        for (auto it = storageItems.begin(); it != storageItems.end(); ++it) {
+            if (*it == item) {
+                storageItems.erase(it);
+                break;
+            }
+        }
+    }
+
+    void displayItems() {
+        std::cout << "Storage Items:" << std::endl;
+        for (const auto& item : storageItems) {
+            std::cout << "- " << item << std::endl;
+        }
+    }
+};
+
+int main() {
+    StorageControl storage;
+
+    storage.addItem("Item 1");
+    storage.addItem("Item 2");
+    storage.addItem("Item 3");
+
+    storage.displayItems();
+
+    storage.removeItem("Item 2");
+
+    storage.displayItems();
+
+    return 0;
+}
